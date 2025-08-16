@@ -1,0 +1,120 @@
+/* 自定义字体大小设置 */
+body {
+    font-size: 16px !important; /* 从15px增加到16px */
+}
+
+p {
+    font-size: 16px !important; /* 从15px增加到16px */
+}
+
+/* 标题字体大小调整 */
+h1 {
+    font-size: 2.5em !important;
+}
+
+h2 {
+    font-size: 2.2em !important;
+}
+
+h3 {
+    font-size: 1.8em !important;
+}
+
+h4 {
+    font-size: 1.5em !important;
+}
+
+h5 {
+    font-size: 1.3em !important;
+}
+
+h6 {
+    font-size: 1.1em !important;
+}
+
+/* 文章内容字体大小 */
+.post-content {
+    font-size: 16px !important;
+    line-height: 1.8em !important;
+}
+
+/* 侧边栏字体大小 */
+.sidebar {
+    font-size: 16px !important;
+}
+
+/* 导航栏字体大小 */
+.nav {
+    font-size: 16px !important;
+}
+
+/* 内容区域中的超链接样式 - 文字颜色不变，只改变下划线颜色 */
+.content a {
+    text-decoration: underline !important; /* 添加下划线 */
+    text-underline-offset: 4px !important; /* 下划线距离文字3px */
+    text-decoration-color: #87CEEB !important; /* 下划线浅蓝色 */
+    color: inherit !important; /* 文字颜色保持原来的颜色 */
+}
+
+.content a:hover {
+    text-decoration: underline !important; /* 悬停时保持下划线 */
+    text-underline-offset: 4px !important; /* 悬停时保持下划线距离 */
+    text-decoration-color: #4169E1 !important; /* 悬停时下划线深蓝色 */
+    color: inherit !important; /* 文字颜色保持原来的颜色 */
+}
+
+/* 排除标题链接的下划线 */
+.content .post-title a,
+.content h1 a,
+.content h2 a,
+.content h3 a,
+.content h4 a,
+.content h5 a,
+.content h6 a {
+    text-decoration: none !important; /* 标题链接不显示下划线 */
+}
+
+/* 布局调整 - 修复侧边栏和内容区域之间的空白 */
+.sidebar {
+    width: 20% !important; /* 从30%减少到20% */
+}
+
+.content {
+    width: 55% !important; /* 内容区域占70% */
+    margin-left: 20% !important; /* 左边距等于侧边栏宽度 */
+    margin-right: 25% !important; /* 右边距10%，在右边留空白 */
+}
+
+.page-top {
+    width: 55% !important; /* 与内容区域保持一致 */
+    margin-left: 20% !important; /* 左边距等于侧边栏宽度 */
+    margin-right: 25% !important; /* 右边距10%，在右边留空白 */
+}
+
+/* 移除分页器的底部边框 */
+.pagination {
+    border-bottom: none !important;
+}
+
+/* 移除评论区域的底部边框 */
+#disqus_thread {
+    border-bottom: none !important;
+}
+
+/* 移除文章页脚的底部边框 */
+.post .post-footer {
+    border-bottom: none !important;
+}
+
+/* 为论文块设置固定高度并居中 */
+.post-content div[style*="display: flex"] {
+    margin-bottom: 40px !important; /* 论文块之间的间距 */
+    height: 200px !important; /* 设置固定高度 */
+    display: flex !important; /* 确保flex布局 */
+    align-items: center !important; /* 垂直居中 */
+    justify-content: center !important; /* 水平居中 */
+}
+
+.post-content div[style*="display: flex"]:last-child {
+    margin-bottom: 0 !important; /* 最后一个论文块不需要底部间距 */
+}
