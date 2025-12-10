@@ -1,10 +1,15 @@
 /* 自定义字体大小设置 */
 body {
     font-size: 16px !important; /* 从15px增加到16px */
+    font-weight: 300 !important; /* 从600减少到300，让字体更轻 */
+    color: rgba(0, 0, 0, 0.7) !important; /* 从50%改为70%透明度，让文字更黑一些 */
+    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; /* 移除 'Arial Black'，因为它本身就是加粗字体 */
 }
 
 p {
     font-size: 16px !important; /* 从15px增加到16px */
+    font-weight: 300 !important; /* 段落文字更轻 */
+    color: rgba(0, 0, 0, 0.7) !important; /* 段落文字颜色更黑一些 */
 }
 
 /* 标题字体大小调整 */
@@ -36,16 +41,61 @@ h6 {
 .post-content {
     font-size: 16px !important;
     line-height: 1.8em !important;
+    font-weight: 300 !important; /* 文章内容字体更轻 */
+    color: rgba(0, 0, 0, 0.7) !important; /* 文章内容文字颜色更黑一些 */
+}
+
+/* 文章内容中的段落和文字 */
+.post-content p,
+.post-content div,
+.post-content span,
+.post-content li {
+    font-weight: 300 !important; /* 内容文字更轻 */
+    color: rgba(0, 0, 0, 0.7) !important; /* 确保内容文字更黑一些 */
 }
 
 /* 侧边栏字体大小 */
 .sidebar {
     font-size: 16px !important;
+    font-weight: 300 !important; /* 侧边栏字体更轻 */
+    color: #fff !important; /* 侧边栏所有文字都是白色 */
+}
+
+/* 侧边栏所有文字元素都设为白色 */
+.sidebar * {
+    color: #fff !important;
+}
+
+/* 侧边栏标题和链接 */
+.sidebar .logo-title .title h3,
+.sidebar .logo-title .title a {
+    color: #fff !important; /* 侧边栏标题白色 */
+}
+
+.sidebar .social-links li,
+.sidebar .social-links a {
+    color: #fff !important; /* 侧边栏链接白色 */
+}
+
+.sidebar .social-links a:hover {
+    color: #4786D6 !important; /* 悬停时保持蓝色 */
+}
+
+/* 侧边栏页脚文字 */
+.sidebar .footer,
+.sidebar .footer *,
+.sidebar .footer a {
+    color: #fff !important; /* 页脚文字白色 */
+}
+
+.sidebar .footer a:hover {
+    color: #4786D6 !important; /* 页脚链接悬停时蓝色 */
 }
 
 /* 导航栏字体大小 */
 .nav {
     font-size: 16px !important;
+    font-weight: 300 !important; /* 导航栏字体更轻 */
 }
 
 /* 内容区域中的超链接样式 - 文字颜色不变，只改变下划线颜色 */
@@ -80,15 +130,15 @@ h6 {
 }
 
 .content {
-    width: 55% !important; /* 内容区域占70% */
+    width: 75% !important; /* 内容区域增加到75%，给更多空间 */
     margin-left: 20% !important; /* 左边距等于侧边栏宽度 */
-    margin-right: 25% !important; /* 右边距10%，在右边留空白 */
+    margin-right: 5% !important; /* 右边距减少到5%，给内容更多空间 */
 }
 
 .page-top {
-    width: 55% !important; /* 与内容区域保持一致 */
+    width: 75% !important; /* 与内容区域保持一致 */
     margin-left: 20% !important; /* 左边距等于侧边栏宽度 */
-    margin-right: 25% !important; /* 右边距10%，在右边留空白 */
+    margin-right: 5% !important; /* 右边距减少到5%，给内容更多空间 */
 }
 
 /* 移除分页器的底部边框 */
@@ -106,15 +156,59 @@ h6 {
     border-bottom: none !important;
 }
 
-/* 为论文块设置固定高度并居中 */
+/* 为论文块设置固定高度并居中 - 统一所有间距 */
+.post-content h3#Publication {
+    margin-bottom: 60px !important; /* Publication标题与第一个paper之间的间距 */
+    margin-top: 0 !important;
+}
+
+/* 所有paper块统一设置 - 强制重置所有margin */
 .post-content div[style*="display: flex"] {
-    margin-bottom: 40px !important; /* 论文块之间的间距 */
+    margin: 0 0 60px 0 !important; /* 统一设置：上右下左，底部间距60px */
     height: 200px !important; /* 设置固定高度 */
     display: flex !important; /* 确保flex布局 */
     align-items: center !important; /* 垂直居中 */
-    justify-content: center !important; /* 水平居中 */
 }
 
-.post-content div[style*="display: flex"]:last-child {
-    margin-bottom: 0 !important; /* 最后一个论文块不需要底部间距 */
+/* 最后一个paper块不需要底部间距 */
+.post-content div[style*="display: flex"]:last-of-type {
+    margin-bottom: 0 !important;
+}
+
+/* 字体粗细调整 - 让整体字体更轻更浅 */
+body, p, div, span, li, a, td, th {
+    font-weight: 300 !important; /* 文本内容更轻（300是light） */
+    color: rgba(0, 0, 0, 0.7) !important; /* 文字颜色更黑一些 */
+    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; /* 移除 'Arial Black' */
+}
+
+/* 确保所有内容区域也使用正确的字体 */
+.content, .post, .post-content {
+    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; /* 移除 'Arial Black' */
+}
+
+/* 标题保持适当的粗细（但比之前更轻） */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500 !important; /* 标题从600改为500，更轻一些 */
+    color: rgba(0, 0, 0, 0.85) !important; /* 标题颜色更黑一些 */
+}
+
+/* 文章标题（About, Publication等）更黑 */
+.post .post-title h1,
+.post .post-title h2,
+.post .post-title h3 {
+    color: rgba(0, 0, 0, 0.85) !important; /* 文章标题更黑 */
+}
+
+/* 侧边栏标题和链接的字体粗细已在上面设置 */
+
+/* 导航栏链接 */
+.nav a {
+    font-weight: 300 !important; /* 导航栏链接更轻 */
+    color: rgba(0, 0, 0, 0.7) !important; /* 导航栏链接颜色更黑一些 */
+}
+
+/* 确保图标字体不受影响 */
+.fa, [class*="fa-"] {
+    font-weight: normal !important; /* 图标字体保持正常 */
 }
