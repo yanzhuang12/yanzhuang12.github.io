@@ -1,15 +1,15 @@
 /* 自定义字体大小设置 */
 body {
-    font-size: 16px !important; /* 从15px增加到16px */
-    font-weight: 300 !important; /* 从600减少到300，让字体更轻 */
-    color: rgba(0, 0, 0, 0.7) !important; /* 从50%改为70%透明度，让文字更黑一些 */
-    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; /* 移除 'Arial Black'，因为它本身就是加粗字体 */
+    font-size: 18px !important; /* 从16px增加到18px，字体更大 */
+    font-weight: 400 !important; /* 从300增加到400，字体更粗 */
+    color: rgba(0, 0, 0, 0.85) !important; /* 从0.7增加到0.85，颜色更深更粗 */
+    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 p {
-    font-size: 16px !important; /* 从15px增加到16px */
-    font-weight: 300 !important; /* 段落文字更轻 */
-    color: rgba(0, 0, 0, 0.7) !important; /* 段落文字颜色更黑一些 */
+    font-size: 18px !important; /* 从16px增加到18px，字体更大 */
+    font-weight: 400 !important; /* 从300增加到400，字体更粗 */
+    color: rgba(0, 0, 0, 0.85) !important; /* 从0.7增加到0.85，颜色更深更粗 */
 }
 
 /* 标题字体大小调整 */
@@ -23,6 +23,12 @@ h2 {
 
 h3 {
     font-size: 1.8em !important;
+}
+
+/* Publication 标题的上下间距设置 - 特殊处理 */
+.post-content h3#Publication {
+    margin-top: -30px !important; /* 顶部间距，负值可以减小间距 */
+    margin-bottom: 30px !important; /* 底部间距 */
 }
 
 h4 {
@@ -39,19 +45,28 @@ h6 {
 
 /* 文章内容字体大小 */
 .post-content {
-    font-size: 16px !important;
+    font-size: 17px !important; /* 从18px减小到17px，稍微小一点 */
     line-height: 1.8em !important;
-    font-weight: 300 !important; /* 文章内容字体更轻 */
-    color: rgba(0, 0, 0, 0.7) !important; /* 文章内容文字颜色更黑一些 */
+    font-weight: 400 !important; /* 从300增加到400，字体更粗 */
+    color: rgba(0, 0, 0, 0.9) !important; /* 从0.7增加到0.85，颜色更深更粗 */
 }
 
-/* 文章内容中的段落和文字 */
-.post-content p,
-.post-content div,
-.post-content span,
-.post-content li {
-    font-weight: 300 !important; /* 内容文字更轻 */
-    color: rgba(0, 0, 0, 0.7) !important; /* 确保内容文字更黑一些 */
+/* 文章内容中的段落和文字（About部分的body文字） */
+.post-content > p { 
+    font-size: 17px !important; /* 稍微小一点，从18px减小到17px */
+    font-weight: 400 !important; /* 从300增加到400，字体更粗 */
+    color: rgba(0, 0, 0, 0.9) !important; /* 从0.7增加到0.85，颜色更深更粗 */
+    margin-bottom: 0 !important; /* 减小段落之间的间距 */
+}
+
+/* About部分最后一个段落（body文本结束）的底部间距 */
+.post-content > p:last-of-type {
+    margin-bottom: -20px !important; /* 减小body文本结束后的底部间距 */
+}
+
+/* 确保Publication部分的字体大小不受影响 */
+.post-content .paper-block .paper-content p {
+    font-size: 16px !important; /* Publication部分保持16px */
 }
 
 /* 侧边栏字体大小 */
@@ -70,6 +85,7 @@ h6 {
 .sidebar .logo-title .title h3,
 .sidebar .logo-title .title a {
     color: #fff !important; /* 侧边栏标题白色 */
+    text-transform: none !important; /* 移除大写转换，保持原始大小写 */
 }
 
 .sidebar .social-links li,
@@ -104,6 +120,7 @@ h6 {
     text-underline-offset: 4px !important; /* 下划线距离文字3px */
     text-decoration-color: #87CEEB !important; /* 下划线浅蓝色 */
     color: inherit !important; /* 文字颜色保持原来的颜色 */
+    font-size: inherit !important; /* 继承父元素的字体大小，确保统一 */
 }
 
 .content a:hover {
@@ -111,6 +128,17 @@ h6 {
     text-underline-offset: 4px !important; /* 悬停时保持下划线距离 */
     text-decoration-color: #4169E1 !important; /* 悬停时下划线深蓝色 */
     color: inherit !important; /* 文字颜色保持原来的颜色 */
+    font-size: inherit !important; /* 继承父元素的字体大小，确保统一 */
+}
+
+/* About部分的链接字体大小统一 */
+.post-content > p a {
+    font-size: 17px !important; /* 与About部分的段落文字大小一致 */
+}
+
+/* Publication部分的链接字体大小统一 */
+.post-content .paper-block .paper-content a {
+    font-size: 16px !important; /* 与Publication部分的文字大小一致 */
 }
 
 /* 排除标题链接的下划线 */
@@ -130,15 +158,15 @@ h6 {
 }
 
 .content {
-    width: 75% !important; /* 内容区域增加到75%，给更多空间 */
-    margin-left: 20% !important; /* 左边距等于侧边栏宽度 */
-    margin-right: 5% !important; /* 右边距减少到5%，给内容更多空间 */
+    width: 75% !important; /* 从75%减少到75%，为间距留出空间 */
+    margin-left: 21% !important; /* 从20%增加到21%，稍微增加左右区域之间的间距 */
+    margin-right: 4% !important; /* 保持5%的右边距 */
 }
 
 .page-top {
     width: 75% !important; /* 与内容区域保持一致 */
-    margin-left: 20% !important; /* 左边距等于侧边栏宽度 */
-    margin-right: 5% !important; /* 右边距减少到5%，给内容更多空间 */
+    margin-left: 21% !important; /* 从20%增加到21%，稍微增加左右区域之间的间距 */
+    margin-right: 4% !important; /* 保持5%的右边距 */
 }
 
 /* 移除分页器的底部边框 */
@@ -156,30 +184,40 @@ h6 {
     border-bottom: none !important;
 }
 
-/* 为论文块设置固定高度并居中 - 统一所有间距 */
-.post-content h3#Publication {
-    margin-bottom: 60px !important; /* Publication标题与第一个paper之间的间距 */
-    margin-top: 0 !important;
+/* 减小About和Publication区块的上下间距 */
+.post {
+    margin: 15px 30px !important; /* 从30px减小到15px，减小上下间距 */
 }
 
-/* 所有paper块统一设置 - 强制重置所有margin */
-.post-content div[style*="display: flex"] {
-    margin: 0 0 60px 0 !important; /* 统一设置：上右下左，底部间距60px */
-    height: 200px !important; /* 设置固定高度 */
-    display: flex !important; /* 确保flex布局 */
-    align-items: center !important; /* 垂直居中 */
+.post .post-title h1 {
+    margin-top: 30px !important; /* 从50px减小到30px，减小顶部间距 */
+    margin-bottom: 10px !important; /* 减小底部间距 */
 }
 
-/* 最后一个paper块不需要底部间距 */
-.post-content div[style*="display: flex"]:last-of-type {
-    margin-bottom: 0 !important;
+
+/* Publication section - 将所有字体变小 */
+.post-content .paper-block {
+    font-size: 16px !important; /* 将paper-block中所有字体变小 */
 }
 
-/* 字体粗细调整 - 让整体字体更轻更浅 */
+.post-content .paper-block .paper-content h4 {
+    font-size: 17px !important; /* 将paper标题字体变小 */
+    line-height: 1.6 !important; /* 增加paper标题的行间距 */
+}
+
+.post-content .paper-block .paper-content p {
+    font-size: 16px !important; /* 将段落字体变小 */
+}
+
+.post-content .paper-block .paper-content a {
+    font-size: 16px !important; /* 将链接字体变小 */
+}
+
+/* 字体粗细调整 - 让整体字体更粗更深 */
 body, p, div, span, li, a, td, th {
-    font-weight: 300 !important; /* 文本内容更轻（300是light） */
-    color: rgba(0, 0, 0, 0.7) !important; /* 文字颜色更黑一些 */
-    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important; /* 移除 'Arial Black' */
+    font-weight: 400 !important; /* 从300增加到400，字体更粗 */
+    color: rgba(0, 0, 0, 0.85) !important; /* 从0.7增加到0.85，颜色更深更粗 */
+    font-family: 'Roboto', 'Segoe UI', 'Helvetica Neue', Arial, sans-serif !important;
 }
 
 /* 确保所有内容区域也使用正确的字体 */
@@ -198,6 +236,12 @@ h1, h2, h3, h4, h5, h6 {
 .post .post-title h2,
 .post .post-title h3 {
     color: rgba(0, 0, 0, 0.85) !important; /* 文章标题更黑 */
+}
+
+/* About 和 Publication 标题字体大小和粗细统一 */
+.post .post-title h1 {
+    font-size: 40px !important; /* 与Publication标题（h3）大小一致 */
+    font-weight: 700 !important; /* 加粗字体（bold），有效范围是100-900 */
 }
 
 /* 侧边栏标题和链接的字体粗细已在上面设置 */
