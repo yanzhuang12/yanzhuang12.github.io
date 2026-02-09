@@ -729,18 +729,20 @@ a.btn {
     position: absolute;
     border-right: none;
     z-index: 1;
-    height: 100%;
+    height: auto;
+    min-height: 100%;
   }
   .sidebar .logo-title {
     margin-top: 60px;
   }
   .sidebar .logo-title .title img {
     width: 100px;
+    max-width: 100%;
+    height: auto;
   }
   .sidebar .logo-title .title h3 {
     font-size: 20px;
   }
-
 
   .page-top {
     width: 100%;
@@ -755,6 +757,8 @@ a.btn {
     z-index: 1;
     position: absolute;
     float: none;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
   }
 
   .footer {
@@ -763,6 +767,23 @@ a.btn {
 
   .share {
     display: grid;
+  }
+  
+  /* Paper block 响应式调整 */
+  .post .post-content .paper-block {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .post .post-content .paper-block .paper-image {
+    width: 100%;
+    text-align: center;
+  }
+  
+  .post .post-content .paper-block .paper-image img {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
   }
 }
 
