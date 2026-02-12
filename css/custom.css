@@ -117,18 +117,24 @@ h6 {
 /* 内容区域中的超链接样式 - 文字颜色不变，只改变下划线颜色 */
 .content a {
     text-decoration: underline !important; /* 添加下划线 */
-    text-underline-offset: 4px !important; /* 下划线距离文字3px */
+    text-underline-offset: 4px !important; /* 下划线距离文字1px，更紧凑 */
+    text-decoration-thickness: 1px !important; /* 下划线粗细1px */
     text-decoration-color: #87CEEB !important; /* 下划线浅蓝色 */
     color: inherit !important; /* 文字颜色保持原来的颜色 */
     font-size: inherit !important; /* 继承父元素的字体大小，确保统一 */
+    letter-spacing: normal !important; /* 字间距正常，与其他文字一致 */
+    font-weight: inherit !important; /* 继承字体粗细，与其他文字一致 */
 }
 
 .content a:hover {
     text-decoration: underline !important; /* 悬停时保持下划线 */
     text-underline-offset: 4px !important; /* 悬停时保持下划线距离 */
+    text-decoration-thickness: 1px !important; /* 悬停时保持下划线粗细 */
     text-decoration-color: #4169E1 !important; /* 悬停时下划线深蓝色 */
     color: inherit !important; /* 文字颜色保持原来的颜色 */
     font-size: inherit !important; /* 继承父元素的字体大小，确保统一 */
+    letter-spacing: normal !important; /* 字间距正常，与其他文字一致 */
+    font-weight: inherit !important; /* 继承字体粗细，与其他文字一致 */
 }
 
 /* About部分的链接字体大小统一 */
